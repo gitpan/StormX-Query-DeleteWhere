@@ -1,27 +1,14 @@
-StormX::Query::DeleteWhere version 0.01
-===========================
 
-See the individual module documentation for more information
 
-INSTALLATION
+This archive contains the distribution StormX-Query-DeleteWhere,
+version 0.200:
 
-To install this module type the following:
+  A delete query with a where clause
 
-   perl Makefile.PL
-   make
-   make test
-   make install
+This software is Copyright (c) 2012 by Jeffrey Ray Hallock.
 
-DEPENDENCIES
+This is free software, licensed under:
 
-This module requires these other modules and libraries:
+  The Artistic License 2.0 (GPL Compatible)
 
-   Storm
-
-COPYRIGHT AND LICENCE
-
-Copyright (C) 2011 Jeffrey Ray Hallock.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 

@@ -1,7 +1,7 @@
 package StormX::Query::DeleteWhere;
-
-our $VERSION = '0.01';
-our $AUTHORITY = 'cpan:JHALLOCK';
+{
+  $StormX::Query::DeleteWhere::VERSION = '0.200';
+}
 
 use Moose;
 use MooseX::StrictConstructor;
@@ -80,8 +80,8 @@ StormX::Query::DeleteWhere - A delete query with a where clause
 
 =head1 DESCRIPTION
 
-Delete objects that you do not have instantiated on your machine by using a
-query with a where clause.
+Delete objects that you do not have instantiated locally by using a delete query
+with a where clause.
 
 =head2 ROLES
 
@@ -101,21 +101,16 @@ query with a where clause.
 
 =item safe_mode
 
-=over 4
-
-=item is: rw
-
-=item isa: Bool
-
-=item default: 1
-
-=item writer: set_safe_mode
-
-=item reader: safe_mode
-
-
 This attribute must be set to true to delete all records from a table in a
 single query.
+
+=over 4
+
+=item is rw
+
+=item isa Bool
+
+=item default 1
 
 =back
 
@@ -125,19 +120,18 @@ single query.
 
 =over 4
 
-=item new $storm, $class, [@params]
+=item b<new $storm, $class, [@params]>
 
 This method instantiates a new L<StormX::Query::DeleteWhere> query. C<$storm> is
 the Storm instance to operate on, and C<$class> is the class of objects you wish
 to delete from the database. Both C<$storm> and <$class> are required. Any
 additional paramaters will be used to query attributes.
 
-=item delete [@args]
+=item b<delete [@args]>
 
 Execute the query, deleting objects from the database. If the where clause of
 your query used placholders ('?'), they will be replaced with the C<@args>
 supplied.
-
 
 =head2 WHERE CLAUSE
 
@@ -161,7 +155,7 @@ Read L<Storm::Tutorial> for more information on how to use these methods.
 =head2 SAFE MODE
 
 By default, L<StormX::Query::DeleteWhere> queries are in "safe-mode". This is
-to safequard your data fromprogramming errors.
+to safequard your data from programming errors.
 
 The following query has no where clause. If ran, it will produce an error
 instead of deleting all the objects in the table. (Which is what would happen
@@ -173,8 +167,7 @@ with an SQL delete query with no where clause.)
     $q->delete;
 
 
-You may disable "safe_mode" and enable clearing of all records from a table like
-this:
+You may disable "safe_mode" and enable clearing of all records from a table like this:
 
     $q = StormX::Query::DeleteWhere->new( $storm, 'My::Object::Class', safe_mode => 0 );
 
@@ -188,14 +181,16 @@ or
 
 Jeffrey Ray Hallock E<lt>jeffrey.hallock at gmail dot comE<gt>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT & LICENSE
 
-    Copyright (c) 2011 Jeffrey Ray Hallock
+Copyright (c) 2010-2012 Jeffrey Ray Hallock.
     
-    All rights reserved. This program is free software; you can redistribute it
-    and/or modify it under the same terms as Perl itself.
+    This is free software, licensed under:
 
+    The Artistic License 2.0 (GPL Compatible)
+    
 =cut
+
 
 
 

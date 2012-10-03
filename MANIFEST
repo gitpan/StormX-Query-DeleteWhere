@@ -1,6 +1,10 @@
 Changes
-lib/StormX/Query/DeleteWhere.pm
+LICENSE
+MANIFEST
+META.yml
 Makefile.PL
-MANIFEST			This list of files
 README
+StormX-Query-DeleteWhere.komodoproject
+dist.ini
+lib/StormX/Query/DeleteWhere.pm
 t/001_delete_where_query.t
