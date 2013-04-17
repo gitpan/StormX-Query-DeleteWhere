@@ -1,6 +1,6 @@
 package StormX::Query::DeleteWhere;
 {
-  $StormX::Query::DeleteWhere::VERSION = '0.200';
+  $StormX::Query::DeleteWhere::VERSION = '0.10';
 }
 
 use Moose;
